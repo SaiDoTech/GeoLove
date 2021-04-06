@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinApp;assembly=XamarinApp"
+             x:Class="XamarinApp.Pages.LogInPage">
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Coral">
+            <Image Source="{local:ImageResource XamarinApp.Images.Logo.png}" 
+               VerticalOptions="Center" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
