@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:XamarinApp;assembly=XamarinApp"
-             x:Class="XamarinApp.Pages.NoScrollTabbedPage">
+            xmlns:local="clr-namespace:XamarinApp.Pages" xmlns:local2="clr-namespace:XamarinApp" 
+            x:Class="XamarinApp.Pages.NoScrollTabbedPage">
 
     <TabbedPage.Children>
-
+        <local:SettingsPage IconImageSource="{local2:ImageResource XamarinApp.Images.SettingsIcon.png}"/>
+        <local:TablePage IconImageSource="{local2:ImageResource XamarinApp.Images.TableIcon.png}"/>
+        <local:MapPage IconImageSource="{local2:ImageResource XamarinApp.Images.MapIcon.png}"/>
+        <local:LovePage IconImageSource="{local2:ImageResource XamarinApp.Images.LoveIcon.png}"/>
+        <local:UserProfilePage IconImageSource="{local2:ImageResource XamarinApp.Images.ProfileIcon.png}"/>
     </TabbedPage.Children>
 </TabbedPage>

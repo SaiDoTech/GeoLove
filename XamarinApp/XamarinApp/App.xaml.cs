@@ -7,13 +7,20 @@ namespace XamarinApp
 {
     public partial class App : Application
     {
+        public static App currentApp;
+
         public App()
         {
-            InitializeComponent();
-
+            currentApp = this;
             MainPage = new LogInPage();
+
+            InitializeComponent();
         }
 
+        public void GotLogged()
+        {
+            MainPage = new NoScrollTabbedPage();
+        }
 
         protected override void OnStart()
         {

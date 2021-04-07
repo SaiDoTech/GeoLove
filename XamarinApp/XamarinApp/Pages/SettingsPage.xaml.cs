@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace XamarinApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LogInPage : ContentPage
+    public partial class SettingsPage : ContentPage
     {
-        public LogInPage()
+        public SettingsPage()
         {
             InitializeComponent();
-        }
-
-        private void OnLogButtonClicked(object sender, EventArgs e)
-        {
-            App.currentApp.GotLogged();
         }
     }
 }

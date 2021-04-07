@@ -12,10 +12,20 @@
 
   <ItemGroup>
     <None Remove="Images\Logo.png" />
+    <None Remove="Images\LoveIcon.png" />
+    <None Remove="Images\MapIcon.png" />
+    <None Remove="Images\ProfileIcon.png" />
+    <None Remove="Images\SettingsIcon.png" />
+    <None Remove="Images\TableIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\LoveIcon.png" />
+    <EmbeddedResource Include="Images\TableIcon.png" />
     <EmbeddedResource Include="Images\Logo.png" />
+    <EmbeddedResource Include="Images\MapIcon.png" />
+    <EmbeddedResource Include="Images\ProfileIcon.png" />
+    <EmbeddedResource Include="Images\SettingsIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +37,22 @@
     <EmbeddedResource Update="Pages\LogInPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Pages\LovePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\MapPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\NoScrollTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\TablePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\UserProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
