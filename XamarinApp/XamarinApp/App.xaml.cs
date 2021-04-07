@@ -14,6 +14,7 @@ namespace XamarinApp
             MainPage = new LogInPage();
         }
 
+
         protected override void OnStart()
         {
         }

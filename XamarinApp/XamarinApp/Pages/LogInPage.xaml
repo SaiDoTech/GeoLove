@@ -3,11 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XamarinApp;assembly=XamarinApp"
              x:Class="XamarinApp.Pages.LogInPage">
-    
-    <ContentPage.Content>
-        <StackLayout BackgroundColor="Coral">
-            <Image Source="{local:ImageResource XamarinApp.Images.Logo.png}" 
-               VerticalOptions="Center" HorizontalOptions="Center"/>
+
+    <ContentPage.Content BackgroundColor="WhiteSmoke">
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Image Source="{local:ImageResource XamarinApp.Images.Logo.png}" />
+
+            <Entry x:Name="loginEntry" Placeholder="Login" WidthRequest="220"
+                   HorizontalOptions="Center" Margin="20, 10, 20, 0"/>
+            <Entry x:Name="passEntry" Placeholder="Password" WidthRequest="220"
+                   IsPassword="True" HorizontalOptions="Center" Margin="20, 5, 20, 0"/>
+            <Button Text="Login" BackgroundColor="#E6567A" WidthRequest="220"
+                   HorizontalOptions="Center" Margin="20, 5, 20, 0" Clicked="OnLogButtonClicked"/>
+            <Label Text="Register" HorizontalOptions="Center" Margin="20, 5, 20, 0"
+                   TextColor="#3B3C3D" />
+
         </StackLayout>
     </ContentPage.Content>
     

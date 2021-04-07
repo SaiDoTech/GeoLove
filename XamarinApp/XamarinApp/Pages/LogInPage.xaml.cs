@@ -16,5 +16,10 @@ namespace XamarinApp.Pages
         {
             InitializeComponent();
         }
+
+        private void OnLogButtonClicked(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
