@@ -14,7 +14,7 @@
                    IsPassword="True" HorizontalOptions="Center" Margin="20, 5, 20, 0"/>
             <Button Text="Login" BackgroundColor="#E6567A" WidthRequest="220"
                    HorizontalOptions="Center" Margin="20, 5, 20, 0" Clicked="OnLogButtonClicked"/>
-            <Label Text="Register" HorizontalOptions="Center" Margin="20, 5, 20, 0"
+            <Label Text="Register" HorizontalOptions="Center" Margin="0, 5, 0, 0"
                    TextColor="#3B3C3D" />
 
         </StackLayout>

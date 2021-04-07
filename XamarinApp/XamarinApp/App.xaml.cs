@@ -7,7 +7,7 @@ namespace XamarinApp
 {
     public partial class App : Application
     {
-        public static App currentApp;
+        public static App currentApp { get; private set; }
 
         public App()
         {
@@ -20,18 +20,6 @@ namespace XamarinApp
         public void GotLogged()
         {
             MainPage = new NoScrollTabbedPage();
-        }
-
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
         }
     }
 }
