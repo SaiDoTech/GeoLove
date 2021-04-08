@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XamarinApp.Pages
+namespace XamarinApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TablePage : ContentPage
+    public partial class UserProfilePage : ContentPage
     {
-        public TablePage()
+        public UserProfilePage()
         {
             InitializeComponent();
         }

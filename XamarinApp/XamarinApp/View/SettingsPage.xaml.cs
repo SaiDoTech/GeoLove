@@ -5,19 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 
-namespace XamarinApp.Pages
+namespace XamarinApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MapPage : ContentPage
+    public partial class SettingsPage : ContentPage
     {
-        public MapPage()
+        public SettingsPage()
         {
-            Map map = new Map();
-            Content = map;
-
             InitializeComponent();
         }
     }

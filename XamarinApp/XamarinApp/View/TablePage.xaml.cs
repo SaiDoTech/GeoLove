@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XamarinApp.Pages
+namespace XamarinApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LogInPage : ContentPage
+    public partial class TablePage : ContentPage
     {
-        public LogInPage()
+        public TablePage()
         {
             InitializeComponent();
-        }
-
-        private void OnLogButtonClicked(object sender, EventArgs e)
-        {
-            App.currentApp.GotLogged();
         }
     }
 }

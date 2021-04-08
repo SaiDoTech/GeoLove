@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XamarinApp.Pages
+namespace XamarinApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SettingsPage : ContentPage
+    public partial class LovePage : ContentPage
     {
-        public SettingsPage()
+        public LovePage()
         {
             InitializeComponent();
         }

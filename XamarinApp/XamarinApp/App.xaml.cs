@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XamarinApp.Pages;
+using XamarinApp.View;
 
 namespace XamarinApp
 {

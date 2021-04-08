@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:local="clr-namespace:XamarinApp.Pages" xmlns:local2="clr-namespace:XamarinApp" 
-            x:Class="XamarinApp.Pages.NoScrollTabbedPage">
+            xmlns:local="clr-namespace:XamarinApp.View" xmlns:local2="clr-namespace:XamarinApp" 
+            x:Class="XamarinApp.View.NoScrollTabbedPage">
 
     <TabbedPage.Children>
         <local:SettingsPage IconImageSource="{local2:ImageResource XamarinApp.Images.SettingsIcon.png}"/>
