@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using XamarinApp.Model;
 using Firebase.Database.Query;
+using XamarinApp.LangResource;
 
 namespace XamarinApp.View
 {
@@ -18,6 +19,11 @@ namespace XamarinApp.View
         public LogInPage()
         {
             InitializeComponent();
+
+            loginEntry.Placeholder = Resource.loginEntryPH;
+            passEntry.Placeholder = Resource.passEntryPH;
+            loginButton.Text = Resource.loginButtonT;
+            regLabel.Text = Resource.regLabelT;
         }
 
         private async void OnLogButtonClicked(object sender, EventArgs e)

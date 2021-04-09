@@ -5,8 +5,17 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Settings"
-                VerticalOptions="CenterAndExpand" 
+                TextDecorations="Underline"
+                FontSize="Large"
                 HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Language:" FontSize="Large" VerticalTextAlignment="Center"/>
+                <Picker x:Name="LangPicker" WidthRequest="100" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Theme:" FontSize="Large" VerticalTextAlignment="Center"/>
+                <Picker x:Name="ThemePicker" WidthRequest="100" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

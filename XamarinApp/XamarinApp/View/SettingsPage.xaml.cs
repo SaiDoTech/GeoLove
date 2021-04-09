@@ -15,6 +15,15 @@ namespace XamarinApp.View
         public SettingsPage()
         {
             InitializeComponent();
+
+            LangPicker.Items.Add("English");
+            LangPicker.Items.Add("Russian");
+            LangPicker.Items.Add("Belorussian");
+            LangPicker.SelectedIndex = 0;
+
+            ThemePicker.Items.Add("Light");
+            ThemePicker.Items.Add("Dark");
+            ThemePicker.SelectedIndex = 0;
         }
     }
 }
