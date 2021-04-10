@@ -4,7 +4,7 @@ using System.Text;
 
 namespace XamarinApp.Model
 {
-    class User
+    public class User
     {
         public int Id;
         public string Login;

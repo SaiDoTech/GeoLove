@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using XamarinApp.Model;
 using Firebase.Database.Query;
 using XamarinApp.LangResource;
+using XamarinApp.Controller;
 
 namespace XamarinApp.View
 {
@@ -28,12 +28,10 @@ namespace XamarinApp.View
 
         private async void OnLogButtonClicked(object sender, EventArgs e)
         {
-            //RegUser();
-
             var userName = loginEntry.Text;
             var pass = passEntry.Text;
 
-            var response = await CheckUser(userName, pass);
+            var response = await DBaseController.CheckUser(userName, pass);
 
             if (response != null)
             {
@@ -45,25 +43,12 @@ namespace XamarinApp.View
             }
         }
 
-        async void RegUser()
-        {
-            await App.firebaseClient
-                .Child("Users")
-                .PostAsync(new User(){Id = 2, Login = "user3", Password = "111"});
-        }
-        async Task<User> CheckUser(string userName, string pass)
-        {
-            var gotted = (await App.firebaseClient
-                .Child("Users")
-                .OnceAsync<User>()).Where(a => a.Object.Login == userName).Where(b => b.Object.Password == pass).FirstOrDefault();
+        //async void RegUser()
+        //{
+        //    await DBaseController.firebaseClient
+        //        .Child("Users")
+        //        .PostAsync(new User(){Id = 2, Login = "user3", Password = "111"});
+        //}
 
-            if (gotted != null)
-            {
-                var content = gotted.Object as User;
-                return content;
-            }
-            else
-                return null;
-        }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinApp.Controller;
 
 namespace XamarinApp.View
 {
@@ -15,6 +16,20 @@ namespace XamarinApp.View
         public TablePage()
         {
             InitializeComponent();
+
+            InitPage();
+        }
+
+        private async void InitPage()
+        {
+            var temp = await DBaseController.GetUsers();
+
+            foreach (var item in temp)
+            {
+                var lol = new Label();
+                lol.Text = item.Login;
+                TableStack.Children.Add(lol);
+            }
         }
     }
 }
