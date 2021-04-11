@@ -23,14 +23,20 @@ namespace XamarinApp.View
 
             this.On<Xamarin.Forms.PlatformConfiguration.Android>().SetIsSwipePagingEnabled(false);
             this.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
-            InitColor();
+
+            settingsPage.ParentPage = this;
         }
 
-        private void InitColor()
+        public void ReColor()
         {
             this.BarBackgroundColor = ColorController.CurrentTheme.AddColor;
             this.SelectedTabColor = ColorController.CurrentTheme.ChoosedColor;
             this.UnselectedTabColor = ColorController.CurrentTheme.BackColor;
+        }
+
+        protected override void OnAppearing()
+        {
+            ReColor();
         }
     }
 }

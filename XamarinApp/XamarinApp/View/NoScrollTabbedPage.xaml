@@ -5,7 +5,7 @@
             x:Class="XamarinApp.View.NoScrollTabbedPage">
 
     <TabbedPage.Children>
-        <local:SettingsPage IconImageSource="{local2:ImageResource XamarinApp.Images.SettingsIcon.png}"/>
+        <local:SettingsPage x:Name="settingsPage" IconImageSource="{local2:ImageResource XamarinApp.Images.SettingsIcon.png}"/>
         <local:TablePage IconImageSource="{local2:ImageResource XamarinApp.Images.TableIcon.png}"/>
         <local:MapPage IconImageSource="{local2:ImageResource XamarinApp.Images.MapIcon.png}"/>
         <local:LovePage IconImageSource="{local2:ImageResource XamarinApp.Images.LoveIcon.png}"/>

@@ -16,7 +16,6 @@ namespace XamarinApp
         {
             currentApp = this;
             var dbase = new DBaseController("https://geolovemaps-default-rtdb.firebaseio.com/");
-            var colorController = new ColorController();
 
             MainPage = new LogInPage();
 
@@ -25,6 +24,7 @@ namespace XamarinApp
 
         public void GotLogged()
         {
+            var colorController = new ColorController();
             MainPage = new NoScrollTabbedPage();
         }
     }

@@ -13,6 +13,8 @@ namespace XamarinApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
+        public NoScrollTabbedPage ParentPage { get; set; }
+
         public SettingsPage()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace XamarinApp.View
             LangPicker.Items.Add("Belorussian");
             LangPicker.SelectedIndex = 0;
 
-            foreach (var theme in ColorController.appThemes)
+            foreach (var theme in ColorController.AppThemes)
             {
                 ThemePicker.Items.Add(theme.Title);
             }
@@ -32,6 +34,19 @@ namespace XamarinApp.View
         private void ThemePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             ColorController.ChangeTheme(ThemePicker.SelectedIndex);
+            if (ParentPage != null)
+                this.ParentPage.ReColor();
+            OnAppearing();
+        }
+
+        protected override void OnAppearing()
+        {
+            InitColor();
+        }
+
+        private void InitColor()
+        {
+            this.BackgroundColor = ColorController.CurrentTheme.BackColor;
         }
     }
 }
