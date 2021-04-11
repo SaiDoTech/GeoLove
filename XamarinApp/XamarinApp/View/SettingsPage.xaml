@@ -14,7 +14,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Theme:" FontSize="Large" VerticalTextAlignment="Center"/>
-                <Picker x:Name="ThemePicker" WidthRequest="100" />
+                <Picker x:Name="ThemePicker" WidthRequest="100" SelectedIndexChanged="ThemePicker_SelectedIndexChanged"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

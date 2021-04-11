@@ -19,11 +19,7 @@ namespace XamarinApp.View
         public LogInPage()
         {
             InitializeComponent();
-
-            loginEntry.Placeholder = Resource.loginEntryPH;
-            passEntry.Placeholder = Resource.passEntryPH;
-            loginButton.Text = Resource.loginButtonT;
-            regLabel.Text = Resource.regLabelT;
+            InitPage();
         }
 
         private async void OnLogButtonClicked(object sender, EventArgs e)
@@ -43,12 +39,19 @@ namespace XamarinApp.View
             }
         }
 
+        private void InitPage()
+        {
+            loginEntry.Placeholder = Resource.loginEntryPH;
+            passEntry.Placeholder = Resource.passEntryPH;
+            loginButton.Text = Resource.loginButtonT;
+            regLabel.Text = Resource.regLabelT;
+        }
+
         //async void RegUser()
         //{
         //    await DBaseController.firebaseClient
         //        .Child("Users")
         //        .PostAsync(new User(){Id = 2, Login = "user3", Password = "111"});
         //}
-
     }
 }

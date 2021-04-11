@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinApp.Controller;
 
 namespace XamarinApp.View
 {
@@ -15,6 +16,16 @@ namespace XamarinApp.View
         public LovePage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            InitColor();
+        }
+
+        private void InitColor()
+        {
+            this.BackgroundColor = ColorController.CurrentTheme.BackColor;
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinApp.Controller;
 
 namespace XamarinApp.View
 {
@@ -21,9 +22,16 @@ namespace XamarinApp.View
             LangPicker.Items.Add("Belorussian");
             LangPicker.SelectedIndex = 0;
 
-            ThemePicker.Items.Add("Light");
-            ThemePicker.Items.Add("Dark");
+            foreach (var theme in ColorController.appThemes)
+            {
+                ThemePicker.Items.Add(theme.Title);
+            }
             ThemePicker.SelectedIndex = 0;
+        }
+
+        private void ThemePicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ColorController.ChangeTheme(ThemePicker.SelectedIndex);
         }
     }
 }

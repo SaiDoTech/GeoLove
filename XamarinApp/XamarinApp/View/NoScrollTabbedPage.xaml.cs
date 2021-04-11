@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
+using XamarinApp.Controller;
 
 namespace XamarinApp.View
 {
@@ -22,6 +23,14 @@ namespace XamarinApp.View
 
             this.On<Xamarin.Forms.PlatformConfiguration.Android>().SetIsSwipePagingEnabled(false);
             this.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+            InitColor();
+        }
+
+        private void InitColor()
+        {
+            this.BarBackgroundColor = ColorController.CurrentTheme.AddColor;
+            this.SelectedTabColor = ColorController.CurrentTheme.ChoosedColor;
+            this.UnselectedTabColor = ColorController.CurrentTheme.BackColor;
         }
     }
 }

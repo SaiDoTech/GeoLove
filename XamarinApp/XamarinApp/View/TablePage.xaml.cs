@@ -16,7 +16,6 @@ namespace XamarinApp.View
         public TablePage()
         {
             InitializeComponent();
-
             InitPage();
         }
 
@@ -26,10 +25,22 @@ namespace XamarinApp.View
 
             foreach (var item in temp)
             {
-                var lol = new Label();
-                lol.Text = item.Login;
+                var lol = new Label
+                {
+                    Text = item.Login
+                };
                 TableStack.Children.Add(lol);
             }
+        }
+    
+        protected override void OnAppearing()
+        {
+            InitColor();
+        }   
+
+        private void InitColor()
+        {
+            this.BackgroundColor = ColorController.CurrentTheme.BackColor;
         }
     }
 }
