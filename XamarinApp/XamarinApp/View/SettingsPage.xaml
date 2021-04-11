@@ -10,11 +10,11 @@
                 FontSize="Large"
                 HorizontalOptions="CenterAndExpand" />
             <StackLayout Orientation="Horizontal">
-                <Label x:Name="LangLabel"
+                <Label x:Name="langLabel"
                     Text="Language:" 
                     FontSize="Large" 
                     VerticalTextAlignment="Center" />
-                <Picker x:Name="LangPicker"
+                <Picker x:Name="langPicker"
                         WidthRequest="100"
                         SelectedIndexChanged="LangPicker_SelectedIndexChanged" />
             </StackLayout>
@@ -23,7 +23,7 @@
                     Text="Theme:"
                     FontSize="Large"
                     VerticalTextAlignment="Center" />
-                <Picker x:Name="ThemePicker"
+                <Picker x:Name="themePicker"
                         WidthRequest="100"
                         SelectedIndexChanged="ThemePicker_SelectedIndexChanged"/>
             </StackLayout>

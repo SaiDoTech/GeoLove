@@ -61,6 +61,15 @@ namespace XamarinApp.LangResource {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Language:.
+        /// </summary>
+        internal static string languageLabelT {
+            get {
+                return ResourceManager.GetString("languageLabelT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Login.
         /// </summary>
         internal static string loginButtonT {
@@ -102,6 +111,15 @@ namespace XamarinApp.LangResource {
         internal static string settingsLabelT {
             get {
                 return ResourceManager.GetString("settingsLabelT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Theme:.
+        /// </summary>
+        internal static string themeLabelT {
+            get {
+                return ResourceManager.GetString("themeLabelT", resourceCulture);
             }
         }
     }

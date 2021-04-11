@@ -22,20 +22,20 @@ namespace XamarinApp.View
 
             foreach (var language in LanguageController.AppLanguages)
             {
-                LangPicker.Items.Add(language.Title);
+                langPicker.Items.Add(language.Title);
             }
-            LangPicker.SelectedIndex = 0;
+            langPicker.SelectedIndex = 0;
 
             foreach (var theme in ColorController.AppThemes)
             {
-                ThemePicker.Items.Add(theme.Title);
+                themePicker.Items.Add(theme.Title);
             }
-            ThemePicker.SelectedIndex = 0;
+            themePicker.SelectedIndex = 0;
         }
 
         private void ThemePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ColorController.ChangeTheme(ThemePicker.SelectedIndex);
+            ColorController.ChangeTheme(themePicker.SelectedIndex);
             if (ParentPage != null)
                 this.ParentPage.ReColor();
             OnAppearing();
@@ -51,21 +51,23 @@ namespace XamarinApp.View
             this.BackgroundColor = ColorController.CurrentTheme.BackColor;
 
             settingsLabel.TextColor = ColorController.CurrentTheme.FontColor;
-            LangPicker.TextColor = ColorController.CurrentTheme.FontColor;
-            LangLabel.TextColor = ColorController.CurrentTheme.FontColor;
+            langPicker.TextColor = ColorController.CurrentTheme.FontColor;
+            langLabel.TextColor = ColorController.CurrentTheme.FontColor;
             themeLabel.TextColor = ColorController.CurrentTheme.FontColor;
-            ThemePicker.TextColor = ColorController.CurrentTheme.FontColor;
+            themePicker.TextColor = ColorController.CurrentTheme.FontColor;
         }
 
         private void LangPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LanguageController.SetNewCulture(LangPicker.SelectedIndex);
+            LanguageController.SetNewCulture(langPicker.SelectedIndex);
             ReTranslate();
         }
 
         private void ReTranslate()
         {
             settingsLabel.Text = Resource.settingsLabelT;
+            langLabel.Text = Resource.languageLabelT;
+            themeLabel.Text = Resource.themeLabelT;
         }
     }
 }
