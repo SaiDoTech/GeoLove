@@ -50,7 +50,11 @@ namespace XamarinApp.View
         {
             this.BackgroundColor = ColorController.CurrentTheme.BackColor;
 
-            settingsLabel.TextColor = ColorController.CurrentTheme.FontColor;
+            settingsLabel.TextColor = ColorController.CurrentTheme.BackColor;
+            settingsLabel.BackgroundColor = ColorController.CurrentTheme.AddColor;
+
+            interfaceLabel.TextColor = ColorController.CurrentTheme.FontColor;
+
             langPicker.TextColor = ColorController.CurrentTheme.FontColor;
             langLabel.TextColor = ColorController.CurrentTheme.FontColor;
             themeLabel.TextColor = ColorController.CurrentTheme.FontColor;
@@ -66,6 +70,7 @@ namespace XamarinApp.View
         private void ReTranslate()
         {
             settingsLabel.Text = Resource.settingsLabelT;
+            interfaceLabel.Text = Resource.interfaceLabelT;
             langLabel.Text = Resource.languageLabelT;
             themeLabel.Text = Resource.themeLabelT;
         }

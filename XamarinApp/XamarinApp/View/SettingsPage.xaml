@@ -5,26 +5,35 @@
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="settingsLabel" 
-                Text="Settings"
-                TextDecorations="Underline"
+                Text="Settings:"
+                FontSize="Title"
+                Padding="10, 10, 0, 10"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center" />
+            <Label x:Name="interfaceLabel" 
+                Text="Interface:"
                 FontSize="Large"
-                HorizontalOptions="CenterAndExpand" />
-            <StackLayout Orientation="Horizontal">
+                Padding="0, 10, 0, 5"
+                VerticalTextAlignment="Center"
+                HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Label x:Name="langLabel"
                     Text="Language:" 
-                    FontSize="Large" 
+                    FontSize="Medium" 
+                    Margin="16, 0, 0, 0" 
                     VerticalTextAlignment="Center" />
                 <Picker x:Name="langPicker"
-                        WidthRequest="100"
+                        WidthRequest="150"
                         SelectedIndexChanged="LangPicker_SelectedIndexChanged" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Label x:Name="themeLabel" 
                     Text="Theme:"
-                    FontSize="Large"
+                    FontSize="Medium"
+                    Margin="16, 0, 5, 0"
                     VerticalTextAlignment="Center" />
                 <Picker x:Name="themePicker"
-                        WidthRequest="100"
+                        WidthRequest="150"
                         SelectedIndexChanged="ThemePicker_SelectedIndexChanged"/>
             </StackLayout>
         </StackLayout>

@@ -61,6 +61,15 @@ namespace XamarinApp.LangResource {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Interface:.
+        /// </summary>
+        internal static string interfaceLabelT {
+            get {
+                return ResourceManager.GetString("interfaceLabelT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Language:.
         /// </summary>
         internal static string languageLabelT {
