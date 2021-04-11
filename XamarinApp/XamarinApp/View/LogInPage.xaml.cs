@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using Firebase.Database.Query;
 using XamarinApp.LangResource;
 using XamarinApp.Controller;
 

@@ -129,4 +129,7 @@
   <data name="regLabelT" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="settingsLabelT" xml:space="preserve">
+    <value>Settings</value>
+  </data>
 </root>

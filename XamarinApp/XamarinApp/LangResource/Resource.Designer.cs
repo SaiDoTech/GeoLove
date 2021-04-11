@@ -95,5 +95,14 @@ namespace XamarinApp.LangResource {
                 return ResourceManager.GetString("regLabelT", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Settings.
+        /// </summary>
+        internal static string settingsLabelT {
+            get {
+                return ResourceManager.GetString("settingsLabelT", resourceCulture);
+            }
+        }
     }
 }

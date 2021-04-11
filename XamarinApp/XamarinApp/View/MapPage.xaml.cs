@@ -16,6 +16,12 @@ namespace XamarinApp.View
         public MapPage()
         {
             Map map = new Map();
+
+            Pin pin = new Pin();
+            pin.Label = "UserLabel";
+
+            map.Pins.Add(pin);
+
             Content = map;
 
             InitializeComponent();

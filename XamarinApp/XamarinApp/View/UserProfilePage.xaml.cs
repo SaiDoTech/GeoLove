@@ -19,10 +19,10 @@ namespace XamarinApp.View
         }
         protected override void OnAppearing()
         {
-            InitColor();
+            ReColor();
         }
 
-        private void InitColor()
+        private void ReColor()
         {
             this.BackgroundColor = ColorController.CurrentTheme.BackColor;
         }

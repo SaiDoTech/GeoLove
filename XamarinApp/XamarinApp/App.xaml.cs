@@ -25,6 +25,7 @@ namespace XamarinApp
         public void GotLogged()
         {
             var colorController = new ColorController();
+            var langController = new LanguageController();
             MainPage = new NoScrollTabbedPage();
         }
     }

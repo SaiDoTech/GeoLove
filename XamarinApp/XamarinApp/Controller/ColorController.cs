@@ -15,8 +15,8 @@ namespace XamarinApp.Controller
 
         public ColorController()
         {
-            var themeLight = new AppTheme("Light", Color.White, Color.FromHex("E6567A"), Color.FromHex("47C9AF"));
-            var themeDark = new AppTheme("Dark", Color.FromHex("3B3C3D"), Color.FromHex("44B39D"), Color.FromHex("BF4A67"));
+            var themeLight = new AppTheme("Light", Color.White, Color.FromHex("E6567A"), Color.FromHex("47C9AF"), Color.FromHex("3B3C3D"));
+            var themeDark = new AppTheme("Dark", Color.FromHex("3B3C3D"), Color.FromHex("44B39D"), Color.FromHex("BF4A67"), Color.White);
 
             AppThemes = new List<AppTheme>()
             {

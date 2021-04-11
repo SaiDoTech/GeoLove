@@ -4,17 +4,28 @@
              x:Class="XamarinApp.View.SettingsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Settings"
+            <Label x:Name="settingsLabel" 
+                Text="Settings"
                 TextDecorations="Underline"
                 FontSize="Large"
                 HorizontalOptions="CenterAndExpand" />
             <StackLayout Orientation="Horizontal">
-                <Label Text="Language:" FontSize="Large" VerticalTextAlignment="Center"/>
-                <Picker x:Name="LangPicker" WidthRequest="100" />
+                <Label x:Name="LangLabel"
+                    Text="Language:" 
+                    FontSize="Large" 
+                    VerticalTextAlignment="Center" />
+                <Picker x:Name="LangPicker"
+                        WidthRequest="100"
+                        SelectedIndexChanged="LangPicker_SelectedIndexChanged" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Theme:" FontSize="Large" VerticalTextAlignment="Center"/>
-                <Picker x:Name="ThemePicker" WidthRequest="100" SelectedIndexChanged="ThemePicker_SelectedIndexChanged"/>
+                <Label x:Name="themeLabel" 
+                    Text="Theme:"
+                    FontSize="Large"
+                    VerticalTextAlignment="Center" />
+                <Picker x:Name="ThemePicker"
+                        WidthRequest="100"
+                        SelectedIndexChanged="ThemePicker_SelectedIndexChanged"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

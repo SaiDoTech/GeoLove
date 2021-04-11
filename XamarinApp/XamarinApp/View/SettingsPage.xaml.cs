@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinApp.Controller;
+using XamarinApp.LangResource;
 
 namespace XamarinApp.View
 {
@@ -19,9 +20,10 @@ namespace XamarinApp.View
         {
             InitializeComponent();
 
-            LangPicker.Items.Add("English");
-            LangPicker.Items.Add("Russian");
-            LangPicker.Items.Add("Belorussian");
+            foreach (var language in LanguageController.AppLanguages)
+            {
+                LangPicker.Items.Add(language.Title);
+            }
             LangPicker.SelectedIndex = 0;
 
             foreach (var theme in ColorController.AppThemes)
@@ -41,12 +43,29 @@ namespace XamarinApp.View
 
         protected override void OnAppearing()
         {
-            InitColor();
+            ReColor();
         }
 
-        private void InitColor()
+        private void ReColor()
         {
             this.BackgroundColor = ColorController.CurrentTheme.BackColor;
+
+            settingsLabel.TextColor = ColorController.CurrentTheme.FontColor;
+            LangPicker.TextColor = ColorController.CurrentTheme.FontColor;
+            LangLabel.TextColor = ColorController.CurrentTheme.FontColor;
+            themeLabel.TextColor = ColorController.CurrentTheme.FontColor;
+            ThemePicker.TextColor = ColorController.CurrentTheme.FontColor;
+        }
+
+        private void LangPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LanguageController.SetNewCulture(LangPicker.SelectedIndex);
+            ReTranslate();
+        }
+
+        private void ReTranslate()
+        {
+            settingsLabel.Text = Resource.settingsLabelT;
         }
     }
 }

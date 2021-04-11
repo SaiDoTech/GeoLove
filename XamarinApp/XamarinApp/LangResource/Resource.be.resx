@@ -117,19 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="loginButtonT" xml:space="preserve">
-    <value>Войти</value>
-  </data>
-  <data name="loginEntryPH" xml:space="preserve">
-    <value>Логин</value>
-  </data>
-  <data name="passEntryPH" xml:space="preserve">
-    <value>Пароль</value>
-  </data>
-  <data name="regLabelT" xml:space="preserve">
-    <value>Регистрация</value>
-  </data>
   <data name="settingsLabelT" xml:space="preserve">
-    <value>Настройки</value>
+    <value>Налады</value>
   </data>
 </root>
