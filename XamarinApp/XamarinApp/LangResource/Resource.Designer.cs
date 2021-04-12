@@ -106,7 +106,7 @@ namespace XamarinApp.LangResource {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Register.
+        ///   Ищет локализованную строку, похожую на Registry.
         /// </summary>
         internal static string regLabelT {
             get {

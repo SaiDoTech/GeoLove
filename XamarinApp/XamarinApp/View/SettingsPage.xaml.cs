@@ -53,6 +53,9 @@ namespace XamarinApp.View
             settingsLabel.TextColor = ColorController.CurrentTheme.BackColor;
             settingsLabel.BackgroundColor = ColorController.CurrentTheme.AddColor;
 
+            interfaceFrame.BackgroundColor = ColorController.CurrentTheme.BackColor;
+            interfaceFrame.BorderColor = ColorController.CurrentTheme.AddColor;
+
             interfaceLabel.TextColor = ColorController.CurrentTheme.FontColor;
 
             langPicker.TextColor = ColorController.CurrentTheme.FontColor;

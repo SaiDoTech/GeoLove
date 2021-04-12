@@ -18,7 +18,19 @@ namespace XamarinApp.View
         public LogInPage()
         {
             InitializeComponent();
-            InitPage();
+
+            TapGestureRecognizer tapGesture = new TapGestureRecognizer
+            {
+                NumberOfTapsRequired = 1
+            };
+            tapGesture.Tapped += (s, e) =>
+            {
+                regLabel.TextColor = Color.FromHex("BF4A67");
+                Navigation.PushModalAsync(new RegistryPage());
+            };
+            regLabel.GestureRecognizers.Add(tapGesture);
+
+            ReTranslate();
         }
 
         private async void OnLogButtonClicked(object sender, EventArgs e)
@@ -38,12 +50,18 @@ namespace XamarinApp.View
             }
         }
 
-        private void InitPage()
+        private void ReTranslate()
         {
             loginEntry.Placeholder = Resource.loginEntryPH;
             passEntry.Placeholder = Resource.passEntryPH;
             loginButton.Text = Resource.loginButtonT;
             regLabel.Text = Resource.regLabelT;
+        }
+
+        protected override void OnAppearing()
+        {
+            ReTranslate();
+            regLabel.TextColor = Color.FromHex("3B3C3D");
         }
 
         //async void RegUser()

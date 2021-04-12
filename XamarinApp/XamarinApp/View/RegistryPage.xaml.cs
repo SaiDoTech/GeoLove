@@ -5,29 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 
 namespace XamarinApp.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MapPage : ContentPage
+    public partial class RegistryPage : ContentPage
     {
-        public MapPage()
+        public RegistryPage()
         {
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
+        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
-            Map map = new Map();
 
-            Pin pin = new Pin();
-            pin.Label = "UserLabel";
-
-            map.Pins.Add(pin);
-
-            Content = map;
         }
     }
 }

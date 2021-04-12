@@ -10,32 +10,36 @@
                 Padding="10, 10, 0, 10"
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Center" />
-            <Label x:Name="interfaceLabel" 
-                Text="Interface:"
-                FontSize="Large"
-                Padding="0, 10, 0, 5"
-                VerticalTextAlignment="Center"
-                HorizontalOptions="Center"/>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Label x:Name="langLabel"
-                    Text="Language:" 
-                    FontSize="Medium" 
-                    Margin="16, 0, 0, 0" 
-                    VerticalTextAlignment="Center" />
-                <Picker x:Name="langPicker"
-                        WidthRequest="150"
-                        SelectedIndexChanged="LangPicker_SelectedIndexChanged" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Label x:Name="themeLabel" 
-                    Text="Theme:"
-                    FontSize="Medium"
-                    Margin="16, 0, 5, 0"
-                    VerticalTextAlignment="Center" />
-                <Picker x:Name="themePicker"
-                        WidthRequest="150"
-                        SelectedIndexChanged="ThemePicker_SelectedIndexChanged"/>
-            </StackLayout>
+            <Frame x:Name="interfaceFrame" Margin="10, 0, 10, 0">
+                <StackLayout Orientation="Vertical">
+                    <Label x:Name="interfaceLabel" 
+                        Text="Interface:"
+                        FontSize="Large"
+                        Padding="0, 10, 0, 5"
+                        VerticalTextAlignment="Center"
+                         HorizontalOptions="Center"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label x:Name="langLabel"
+                            Text="Language:" 
+                            FontSize="Medium" 
+                            Margin="16, 0, 0, 0" 
+                            VerticalTextAlignment="Center" />
+                        <Picker x:Name="langPicker"
+                            WidthRequest="150"
+                            SelectedIndexChanged="LangPicker_SelectedIndexChanged" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label x:Name="themeLabel" 
+                            Text="Theme:"
+                            FontSize="Medium"
+                            Margin="16, 0, 5, 0"
+                            VerticalTextAlignment="Center" />
+                        <Picker x:Name="themePicker"
+                            WidthRequest="150"
+                            SelectedIndexChanged="ThemePicker_SelectedIndexChanged"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
