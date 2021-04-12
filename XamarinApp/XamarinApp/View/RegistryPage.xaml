@@ -40,8 +40,39 @@
                             VerticalTextAlignment="Center"
                             HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Gender:"
+                        VerticalTextAlignment="Center"
+                        TextColor="#3B3C3D"
+                        FontSize="Medium"/>
+                        <Picker FontSize="Medium"
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="FillAndExpand">
+                            <Picker.Items>
+                                <x:String>Male</x:String>
+                                <x:String>Female</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Date of Birth:"
+                        VerticalTextAlignment="Center"
+                        TextColor="#3B3C3D"
+                        FontSize="Medium"/>
+                        <DatePicker FontSize="Medium"
+                            HorizontalOptions="FillAndExpand">
+                            <DatePicker.MaximumDate>04/13/2003</DatePicker.MaximumDate>
+                        </DatePicker>
+                    </StackLayout>
                 </StackLayout>
             </Frame>
+            <Button x:Name="loginButton"
+                    Text="Registry"
+                    BackgroundColor="#E6567A"
+                    TextColor="White"
+                    WidthRequest="220"
+                    HorizontalOptions="Center"
+                    Margin="0, 10, 0, 0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
