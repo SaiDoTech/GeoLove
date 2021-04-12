@@ -16,10 +16,5 @@ namespace XamarinApp.View
         {
             InitializeComponent();
         }
-
-        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
-        {
-
-        }
     }
 }

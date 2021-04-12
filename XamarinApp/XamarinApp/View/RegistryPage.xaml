@@ -3,38 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinApp.View.RegistryPage">
 
-    <TableView>
-        <TableView.Root>
-            <TableRoot Title="Registry">
-                <TableSection Title="System">
-                    <EntryCell Label="Login" Placeholder="login" />
-                    <EntryCell Label="Password" Placeholder="password" />
-                </TableSection>
-                <TableSection Title="Personal Data">
-                    <EntryCell Label="Name" />
-                    <ViewCell>
-                        <StackLayout>
-                            <Label Text="Gender:" />
-                            <Picker>
-                                <Picker.Items>
-                                    <x:String>Male</x:String>
-                                    <x:String>Female</x:String>
-                                </Picker.Items>
-                            </Picker>
-                        </StackLayout>
-                    </ViewCell>
-                    <ViewCell>
-                        <StackLayout>
-                            <Label Text="Birth Date:" />
-                            <DatePicker Format="D" DateSelected="DatePicker_DateSelected">
-                                <DatePicker.MaximumDate>
-                                   4/12/2003
-                                </DatePicker.MaximumDate>
-                            </DatePicker>
-                        </StackLayout>
-                    </ViewCell>
-                </TableSection>
-            </TableRoot>
-        </TableView.Root>
-    </TableView>
+    <ContentPage.Content>
+        <StackLayout Margin="10, 0, 10, 0">
+            <Label Text="Registry"
+                   TextDecorations="Underline"
+                   HorizontalOptions="Center"
+                   FontSize="Title"
+                   TextColor="#E6567A"/>
+            <Frame BackgroundColor="White"
+                   BorderColor="#E6567A">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Login:"
+                        VerticalTextAlignment="Center"
+                        TextColor="#3B3C3D"
+                        FontSize="Medium"/>
+                        <Entry FontSize="Medium"
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Password:"
+                        VerticalTextAlignment="Center"
+                        TextColor="#3B3C3D"
+                        FontSize="Medium"/>
+                        <Entry FontSize="Medium"
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Name:"
+                        VerticalTextAlignment="Center"
+                        TextColor="#3B3C3D"
+                        FontSize="Medium"/>
+                        <Entry FontSize="Medium"
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
