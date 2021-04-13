@@ -35,18 +35,20 @@ namespace XamarinApp.View
 
         private async void OnLogButtonClicked(object sender, EventArgs e)
         {
-            var userName = loginEntry.Text;
+            var login = loginEntry.Text;
             var pass = passEntry.Text;
 
-            var response = await DBaseController.CheckUser(userName, pass);
+            var response = await DBaseController.LogInUser(login, pass);
 
             if (response != null)
             {
-                App.currentApp.GotLogged();
+                App.currentApp.GotLogged(response);
+                response.Name = "TestName";
+                var temp = DBaseController.UpdateUser(response);
             }
             else
             {
-                await this.DisplayAlert("Alert","Invalid login or password!","OK");
+                await this.DisplayAlert("Alert", "Invalid login or password!", "OK");
             }
         }
 
@@ -63,12 +65,5 @@ namespace XamarinApp.View
             ReTranslate();
             regLabel.TextColor = Color.FromHex("3B3C3D");
         }
-
-        //async void RegUser()
-        //{
-        //    await DBaseController.firebaseClient
-        //        .Child("Users")
-        //        .PostAsync(new User(){Id = 2, Login = "user3", Password = "111"});
-        //}
     }
 }

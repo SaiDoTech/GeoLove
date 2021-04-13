@@ -18,7 +18,8 @@
                         VerticalTextAlignment="Center"
                         TextColor="#3B3C3D"
                         FontSize="Medium"/>
-                        <Entry FontSize="Medium"
+                        <Entry x:Name="loginEntry" 
+                            FontSize="Medium"
                             VerticalTextAlignment="Center"
                             HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
@@ -27,7 +28,8 @@
                         VerticalTextAlignment="Center"
                         TextColor="#3B3C3D"
                         FontSize="Medium"/>
-                        <Entry FontSize="Medium"
+                        <Entry x:Name="passEntry" 
+                            FontSize="Medium"
                             VerticalTextAlignment="Center"
                             HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
@@ -36,7 +38,8 @@
                         VerticalTextAlignment="Center"
                         TextColor="#3B3C3D"
                         FontSize="Medium"/>
-                        <Entry FontSize="Medium"
+                        <Entry x:Name="nameEntry" 
+                            FontSize="Medium"
                             VerticalTextAlignment="Center"
                             HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
@@ -45,7 +48,8 @@
                         VerticalTextAlignment="Center"
                         TextColor="#3B3C3D"
                         FontSize="Medium"/>
-                        <Picker FontSize="Medium"
+                        <Picker x:Name="genderPicker" 
+                            FontSize="Medium"
                             VerticalTextAlignment="Center"
                             HorizontalOptions="FillAndExpand">
                             <Picker.Items>
@@ -59,20 +63,23 @@
                         VerticalTextAlignment="Center"
                         TextColor="#3B3C3D"
                         FontSize="Medium"/>
-                        <DatePicker FontSize="Medium"
+                        <DatePicker x:Name="datePicker"
+                            DateSelected="datePicker_DateSelected"
+                            FontSize="Medium"
                             HorizontalOptions="FillAndExpand">
                             <DatePicker.MaximumDate>04/13/2003</DatePicker.MaximumDate>
                         </DatePicker>
                     </StackLayout>
                 </StackLayout>
             </Frame>
-            <Button x:Name="loginButton"
+            <Button x:Name="registryButton"
                     Text="Registry"
                     BackgroundColor="#E6567A"
                     TextColor="White"
                     WidthRequest="220"
                     HorizontalOptions="Center"
-                    Margin="0, 10, 0, 0"/>
+                    Margin="0, 10, 0, 0"
+                    Clicked="registryButton_ClickedAsync"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
