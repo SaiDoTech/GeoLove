@@ -31,26 +31,14 @@ namespace XamarinApp.View
 
             try
             {
-                var response = await DBaseController.IsLoginFree(login);
-
+                var response =  await UserController.CreateNewUser(login, pass, name, dob, gender);
                 if (response)
                 {
-                    var id = await DBaseController.GetUsersCount();
-                    id++;
-
-                    var user = new Model.User(id, login, pass, name, dob, gender);
-
-                    var registered = await DBaseController.RegUser(user);
-                    if (registered)
-                    {
-                        await DisplayAlert("Congratulation!", "Successful registry!", "OK!");
-                        await Navigation.PopModalAsync();
-                    }
-                    else
-                        throw new Exception("Something went wrong!");
+                    await DisplayAlert("Congratulation!", "Successful registry!", "OK!");
+                    await Navigation.PopModalAsync();
                 }
                 else
-                    throw new Exception("Sorry, but this login is already taken!");
+                    throw new Exception("Something went wrong!");
             }
             catch (Exception ex)
             {

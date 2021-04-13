@@ -21,16 +21,16 @@ namespace XamarinApp.View
 
         private async void InitPage()
         {
-            //var temp = await DBaseController.GetUsers();
+            var temp = await DBaseController.GetAllUsers();
 
-        //    foreach (var item in temp)
-        //    {
-        //        var lol = new Label
-        //        {
-        //            Text = item.Login
-        //        };
-        //        TableStack.Children.Add(lol);
-        //    }
+            foreach (var item in temp)
+            {
+                var lol = new Label
+                {
+                    Text = item.Login
+                };
+                TableStack.Children.Add(lol);
+            }
         }
     
         protected override void OnAppearing()

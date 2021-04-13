@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using Xamarin.Forms.Maps;
 
 namespace XamarinApp.Model
 {
@@ -15,11 +15,10 @@ namespace XamarinApp.Model
         public Gender Gender { get; set; }
 
         public byte Age { get; set; }
-        public UserPosition UserPosition { get; set; }
+        public Position UserPosition { get; set; }
         public DateTime lastTimeVisited { get;  set; }
 
         public List<int> LikedId { get; set; }
-        public UserData UserPhoto { get; set; }
 
         public User(int id,
                     string login,
@@ -57,6 +56,15 @@ namespace XamarinApp.Model
                 this.Gender = gender;
             else
                 throw new Exception("Please, set your gender!");
+
+            Age = (Byte)(DateTime.Now.Year - dob.Year);
+            if (DateTime.Now.DayOfYear < dob.DayOfYear)
+                Age--;
+
+            UserPosition = new Position(53.898578, 27.453100);
+            lastTimeVisited = DateTime.Now;
+            LikedId = new List<int>();
+
         }
 
         public User()

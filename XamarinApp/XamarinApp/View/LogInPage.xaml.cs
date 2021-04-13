@@ -43,8 +43,6 @@ namespace XamarinApp.View
             if (response != null)
             {
                 App.currentApp.GotLogged(response);
-                response.Name = "TestName";
-                var temp = DBaseController.UpdateUser(response);
             }
             else
             {

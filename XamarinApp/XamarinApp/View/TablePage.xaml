@@ -3,8 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinApp.View.TablePage">
     <ContentPage.Content>
-        <StackLayout x:Name="TableStack">
+        <StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="#E6567A"
+                         Padding="0, 5, 0, 10">
+                <Label
+                    TextColor="White"
+                    Text="Sort by:"
+                    FontSize="Title"
+                    VerticalTextAlignment="Center"
+                    HorizontalOptions="Center"/>
+                <Picker
+                    TextColor="White"
+                    FontSize="Title"
+                    VerticalTextAlignment="Center"
+                    HorizontalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Age</x:String>
+                        <x:String>Distance</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout x:Name="TableStack">
 
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

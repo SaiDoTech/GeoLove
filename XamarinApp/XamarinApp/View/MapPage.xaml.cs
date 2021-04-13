@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
+using XamarinApp.Controller;
 
 namespace XamarinApp.View
 {
@@ -20,12 +21,7 @@ namespace XamarinApp.View
 
         protected override void OnAppearing()
         {
-            Map map = new Map();
-
-            Pin pin = new Pin();
-            pin.Label = "UserLabel";
-
-            map.Pins.Add(pin);
+            Map map = new Map(MapSpan.FromCenterAndRadius(UserController.CurrentUser.UserPosition, Distance.FromKilometers(10)));
 
             Content = map;
         }
