@@ -4,12 +4,14 @@
              x:Class="XamarinApp.View.SettingsPage">
     <ContentPage.Content>
         <StackLayout>
+            
             <Label x:Name="settingsLabel" 
                 Text="Settings:"
                 FontSize="Title"
-                Padding="10, 10, 0, 10"
+                Padding="0, 10, 0, 10"
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Center" />
+            
             <Frame x:Name="interfaceFrame" Margin="10, 10, 10, 0">
                 <StackLayout Orientation="Vertical">
                     <Label x:Name="interfaceLabel" 
