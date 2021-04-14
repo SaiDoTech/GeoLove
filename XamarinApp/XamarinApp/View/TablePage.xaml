@@ -4,63 +4,24 @@
              x:Class="XamarinApp.View.TablePage">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal"
-                         BackgroundColor="#E6567A"
-                         Padding="0, 5, 0, 5">
-                <Picker
-                    TextColor="White"
+            <StackLayout x:Name="upStack"
+                Orientation="Horizontal"
+                Padding="0, 5, 0, 5">
+
+                <Picker x:Name="sortPicker"
                     FontSize="Title"
                     VerticalTextAlignment="Center"
                     HorizontalTextAlignment="Center"
-                    HorizontalOptions="FillAndExpand"
-                    SelectedIndex="0">
-                    <Picker.Items>
-                        <x:String>Sort by Age</x:String>
-                        <x:String>Sort by Distance</x:String>
-                    </Picker.Items>
+                    HorizontalOptions="FillAndExpand">
                 </Picker>
                 
             </StackLayout>
-            <StackLayout x:Name="TableStack" Margin="10,10,10,10">
-                <Frame Padding="5,5,5,5"
-                       BorderColor="#E6567A">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.25*"/>
-                            <ColumnDefinition Width="0.5*"/>
-                            <ColumnDefinition Width="0.25*"/>
-                        </Grid.ColumnDefinitions>
 
-                        <BoxView Grid.Row="0" Grid.Column="0" Color="Green"/>
-                        <BoxView Grid.Row="0" Grid.Column="1" Color="Firebrick"/>
-                        <BoxView Grid.Row="0" Grid.Column="2" Color="Violet"/>
-
-                    </Grid>
-                </Frame>
-                
-                <Frame Padding="5,5,5,5"
-                       BorderColor="#E6567A">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.25*"/>
-                            <ColumnDefinition Width="0.5*"/>
-                            <ColumnDefinition Width="0.25*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <BoxView Grid.Row="0" Grid.Column="0" Color="Green"/>
-                        <BoxView Grid.Row="0" Grid.Column="1" Color="Firebrick"/>
-                        <BoxView Grid.Row="0" Grid.Column="2" Color="Violet"/>
-
-                    </Grid>
-                </Frame>
-            
-            </StackLayout>
+            <ScrollView>
+                <StackLayout x:Name="frameStack"
+                             Margin="10,10,10,10">
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

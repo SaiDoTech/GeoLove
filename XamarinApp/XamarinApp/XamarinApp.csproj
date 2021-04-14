@@ -17,6 +17,8 @@
     <None Remove="Images\ProfileIcon.png" />
     <None Remove="Images\SettingsIcon.png" />
     <None Remove="Images\TableIcon.png" />
+    <None Remove="Images\UserIconF.png" />
+    <None Remove="Images\UserIconM.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +28,8 @@
     <EmbeddedResource Include="Images\MapIcon.png" />
     <EmbeddedResource Include="Images\ProfileIcon.png" />
     <EmbeddedResource Include="Images\SettingsIcon.png" />
+    <EmbeddedResource Include="Images\UserIconF.png" />
+    <EmbeddedResource Include="Images\UserIconM.png" />
   </ItemGroup>
 
   <ItemGroup>
