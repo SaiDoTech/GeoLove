@@ -27,22 +27,12 @@ namespace XamarinApp.View
             sortPicker.Items.Add("Sort by age");
             sortPicker.Items.Add("Sort by Distance");
             sortPicker.SelectedIndex = 0;
-
-           // foreach (var item in temp)
-           // {
-           //     var lol = new Label
-           //     {
-           //         Text = item.Login
-           //     };
-           //    TableStack.Children.Add(lol);
-           // }
         }
     
         protected override void OnAppearing()
         {
             ReColor();
 
-            // CLEAR STACK!!!
             frameStack.Children.Clear();
             ShowLikedUsers();
         }   
@@ -68,14 +58,13 @@ namespace XamarinApp.View
                 {
                     RowDefinitions =
                     {
-                        new RowDefinition()
+                        new RowDefinition { Height = new GridLength(0.4f, GridUnitType.Star)}
                     },
                     ColumnDefinitions =
                     {
                         new ColumnDefinition{ Width = new GridLength(0.25f, GridUnitType.Star ) },
                         new ColumnDefinition{ Width = new GridLength(0.5f, GridUnitType.Star ) },
                         new ColumnDefinition{ Width = new GridLength(0.25f, GridUnitType.Star ) },
-
                     }
                 };
 
@@ -84,16 +73,63 @@ namespace XamarinApp.View
                 {
                     Text = UserController.CurrentUser.Name + ", " + UserController.CurrentUser.Age,
                     TextColor = ColorController.CurrentTheme.FontColor,
-                    TextDecorations = TextDecorations.Underline
+                    TextDecorations = TextDecorations.Underline,
+                    FontSize = 22
                 };
                 userInfo.Children.Add(nameAgeLabel);
 
+                var genderLabel = new Label()
+                {
+                    Text = "Gender: " + UserController.CurrentUser.Gender.Title,
+                    TextColor = ColorController.CurrentTheme.FontColor,
+                    FontSize = 16
+                };
+                userInfo.Children.Add(genderLabel);
+
+                var statusLabel = new Label()
+                {
+                    Text = "Status: Active",
+                    TextColor = ColorController.CurrentTheme.FontColor,
+                    FontSize = 16
+                };
+                userInfo.Children.Add(statusLabel);
+
+                var repLabel = new Label()
+                {
+                    Text = "Reciprocity: Tru",
+                    TextColor = ColorController.CurrentTheme.FontColor,
+                    FontSize = 16
+                };
+                userInfo.Children.Add(repLabel);
+
+                var hSize = 0.15f * frameStack.Width;
+                var wSize = 0.25f * frameStack.Width;
+
                 var userPhoto = new Image();
                 userPhoto.Source = ImageSource.FromResource("XamarinApp.Images.UserIconM.png");
+                userPhoto.WidthRequest = wSize;
+                userPhoto.HeightRequest = hSize;
+                userPhoto.Aspect = Aspect.AspectFit;
 
-                grid.Children.Add(userPhoto, 0, 0);
+                var userFrame = new Frame();
+                userFrame.BorderColor = ColorController.CurrentTheme.AddColor;
+                userFrame.Content = userPhoto;
+                userFrame.BackgroundColor = ColorController.CurrentTheme.BackColor;
+
+                var unlikePhoto = new Image();
+                unlikePhoto.Source = ImageSource.FromResource("XamarinApp.Images.UnlikeIcon.png");
+                unlikePhoto.WidthRequest = wSize;
+                unlikePhoto.HeightRequest = hSize;
+                unlikePhoto.Aspect = Aspect.AspectFit;
+
+                var unlikeFrame = new Frame();
+                unlikeFrame.BorderColor = ColorController.CurrentTheme.AddColor;
+                unlikeFrame.Content = unlikePhoto;
+                unlikeFrame.BackgroundColor = ColorController.CurrentTheme.BackColor;
+
+                grid.Children.Add(userFrame, 0, 0);
                 grid.Children.Add(userInfo, 1, 0 );
-                grid.Children.Add(new BoxView { Color = Color.Green }, 2, 0);
+                grid.Children.Add(unlikeFrame, 2, 0);
 
                 frame.Content = grid;
                 frameStack.Children.Add(frame);
