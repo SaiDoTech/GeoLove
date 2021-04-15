@@ -50,7 +50,7 @@ namespace XamarinApp.View
             {
                 var frame = new Frame();
 
-                frame.Padding = new Thickness(5, 5, 5, 5);
+                frame.Padding = new Thickness(5,5,5,5);
                 frame.BorderColor = ColorController.CurrentTheme.AddColor;
                 frame.BackgroundColor = ColorController.CurrentTheme.BackColor;
 
@@ -96,7 +96,7 @@ namespace XamarinApp.View
 
                 var repLabel = new Label()
                 {
-                    Text = "Reciprocity: Tru",
+                    Text = "Reciprocity: True",
                     TextColor = ColorController.CurrentTheme.FontColor,
                     FontSize = 16
                 };
@@ -106,26 +106,39 @@ namespace XamarinApp.View
                 var wSize = 0.25f * frameStack.Width;
 
                 var userPhoto = new Image();
-                userPhoto.Source = ImageSource.FromResource("XamarinApp.Images.UserIconM.png");
-                userPhoto.WidthRequest = wSize;
-                userPhoto.HeightRequest = hSize;
-                userPhoto.Aspect = Aspect.AspectFit;
+                //userPhoto.Source = ImageSource.FromResource("XamarinApp.Images.UserIconM.png");
+                userPhoto.Source = new UriImageSource
+                {
+                    CachingEnabled = false,
+                    Uri = new Uri("https://zachiska.com/wp-content/uploads/2020/07/e-girl-hairstyle.jpg")
+                };
+                userPhoto.Aspect = Aspect.AspectFill;
 
-                var userFrame = new Frame();
-                userFrame.BorderColor = ColorController.CurrentTheme.AddColor;
-                userFrame.Content = userPhoto;
-                userFrame.BackgroundColor = ColorController.CurrentTheme.BackColor;
+                var userFrame = new Frame
+                {
+                    BorderColor = ColorController.CurrentTheme.AddColor,
+                    Content = userPhoto,
+                    BackgroundColor = ColorController.CurrentTheme.BackColor,
+                    WidthRequest = wSize,
+                    HeightRequest = hSize,
+                    Padding = new Thickness(1,1,1,1)
+                };
 
-                var unlikePhoto = new Image();
-                unlikePhoto.Source = ImageSource.FromResource("XamarinApp.Images.UnlikeIcon.png");
-                unlikePhoto.WidthRequest = wSize;
-                unlikePhoto.HeightRequest = hSize;
-                unlikePhoto.Aspect = Aspect.AspectFit;
+                var unlikePhoto = new Image
+                {
+                    Source = ImageSource.FromResource("XamarinApp.Images.UnlikeIcon.png"),
+                    WidthRequest = wSize,
+                    HeightRequest = hSize,
+                    Aspect = Aspect.AspectFill
+                };
 
-                var unlikeFrame = new Frame();
-                unlikeFrame.BorderColor = ColorController.CurrentTheme.AddColor;
-                unlikeFrame.Content = unlikePhoto;
-                unlikeFrame.BackgroundColor = ColorController.CurrentTheme.BackColor;
+                var unlikeFrame = new Frame
+                {
+                    BorderColor = ColorController.CurrentTheme.AddColor,
+                    Content = unlikePhoto,
+                    BackgroundColor = ColorController.CurrentTheme.BackColor,
+                    Padding = new Thickness(1, 1, 1, 1)
+                };
 
                 grid.Children.Add(userFrame, 0, 0);
                 grid.Children.Add(userInfo, 1, 0 );

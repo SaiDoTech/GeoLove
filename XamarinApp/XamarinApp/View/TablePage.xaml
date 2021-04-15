@@ -19,7 +19,7 @@
 
             <ScrollView>
                 <StackLayout x:Name="frameStack"
-                             Margin="10,10,10,10">
+                             Padding="10,10,10,10">
                 </StackLayout>
             </ScrollView>
         </StackLayout>
