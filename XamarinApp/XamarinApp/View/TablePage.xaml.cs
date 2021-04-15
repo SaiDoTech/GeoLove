@@ -63,12 +63,14 @@ namespace XamarinApp.View
                     ColumnDefinitions =
                     {
                         new ColumnDefinition{ Width = new GridLength(0.25f, GridUnitType.Star ) },
-                        new ColumnDefinition{ Width = new GridLength(0.5f, GridUnitType.Star ) },
-                        new ColumnDefinition{ Width = new GridLength(0.25f, GridUnitType.Star ) },
+                        new ColumnDefinition{ Width = new GridLength(0.75f, GridUnitType.Star ) },
                     }
                 };
 
                 var userInfo = new StackLayout();
+                userInfo.Margin = new Thickness(5,0,0,0);
+                userInfo.Spacing = 0.5f;
+
                 var nameAgeLabel = new Label()
                 {
                     Text = UserController.CurrentUser.Name + ", " + UserController.CurrentUser.Age,
@@ -96,14 +98,14 @@ namespace XamarinApp.View
 
                 var repLabel = new Label()
                 {
-                    Text = "Reciprocity: True",
+                    Text = "Reciprocity: Accepted",
                     TextColor = ColorController.CurrentTheme.FontColor,
                     FontSize = 16
                 };
                 userInfo.Children.Add(repLabel);
 
-                var hSize = 0.15f * frameStack.Width;
-                var wSize = 0.25f * frameStack.Width;
+                var hSize = 0.2f * frameStack.Width;
+                var wSize = 0.3f * frameStack.Width;
 
                 var userPhoto = new Image();
                 //userPhoto.Source = ImageSource.FromResource("XamarinApp.Images.UserIconM.png");
@@ -124,25 +126,8 @@ namespace XamarinApp.View
                     Padding = new Thickness(1,1,1,1)
                 };
 
-                var unlikePhoto = new Image
-                {
-                    Source = ImageSource.FromResource("XamarinApp.Images.UnlikeIcon.png"),
-                    WidthRequest = wSize,
-                    HeightRequest = hSize,
-                    Aspect = Aspect.AspectFill
-                };
-
-                var unlikeFrame = new Frame
-                {
-                    BorderColor = ColorController.CurrentTheme.AddColor,
-                    Content = unlikePhoto,
-                    BackgroundColor = ColorController.CurrentTheme.BackColor,
-                    Padding = new Thickness(1, 1, 1, 1)
-                };
-
                 grid.Children.Add(userFrame, 0, 0);
                 grid.Children.Add(userInfo, 1, 0 );
-                grid.Children.Add(unlikeFrame, 2, 0);
 
                 frame.Content = grid;
                 frameStack.Children.Add(frame);
