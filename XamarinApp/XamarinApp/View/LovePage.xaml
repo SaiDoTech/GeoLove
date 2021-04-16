@@ -4,9 +4,19 @@
              x:Class="XamarinApp.View.LovePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Love"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            
+            <Label x:Name="profileLabel" 
+                Text="Swipe"
+                FontSize="Title"
+                Padding="0, 10, 0, 10"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center" />
+
+            <Frame x:Name="userFrame"
+                   Margin="10,10,10,10" 
+                   Padding="50,50,50,50"
+                   VerticalOptions="FillAndExpand"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

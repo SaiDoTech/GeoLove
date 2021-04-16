@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms;
 using XamarinApp.Controller;
 
 namespace XamarinApp.View
@@ -130,8 +130,29 @@ namespace XamarinApp.View
                 grid.Children.Add(userInfo, 1, 0 );
 
                 frame.Content = grid;
-                frameStack.Children.Add(frame);
+
+                SwipeItem item = new SwipeItem
+                {
+                    Text = "Dislike",
+                    BackgroundColor = ColorController.CurrentTheme.AddColor
+                };
+                item.Invoked += OnInvoked;
+                SwipeItems swipeItems = new SwipeItems(new List<SwipeItem>() { item });
+                swipeItems.Mode = SwipeMode.Execute;
+                SwipeView swipeView = new SwipeView
+                {
+                    LeftItems = swipeItems,
+                    RightItems = swipeItems,
+                    Content = frame
+                };
+
+                frameStack.Children.Add(swipeView);
             }
+        }
+
+        public void OnInvoked(object sender, EventArgs e)
+        {
+            DisplayAlert("Alert", "Deleted", "OK");
         }
     }
 }

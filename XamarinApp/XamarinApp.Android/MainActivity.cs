@@ -18,6 +18,8 @@ namespace XamarinApp.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            Xamarin.Forms.Forms.SetFlags("SwipeView_Experimental");
+
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

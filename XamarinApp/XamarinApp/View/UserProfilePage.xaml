@@ -4,9 +4,9 @@
              x:Class="XamarinApp.View.UserProfilePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="UserProfile"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            
+
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

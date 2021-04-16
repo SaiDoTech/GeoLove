@@ -10,15 +10,13 @@ namespace XamarinApp.Model
         public string Title { get; private set; }
         public Color BackColor { get; private set; }
         public Color AddColor { get; private set; }
-        public Color ChoosedColor { get; private set; }
         public Color FontColor { get; private set; }
 
-        public AppTheme(string title, Color back, Color add, Color choose, Color font)
+        public AppTheme(string title, Color back, Color add, Color font)
         {
             Title = title;
             BackColor = back;
             AddColor = add;
-            ChoosedColor = choose;
             FontColor = font;
         }
     }

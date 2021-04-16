@@ -29,9 +29,9 @@ namespace XamarinApp.View
 
         public void ReColor()
         {
-            this.BarBackgroundColor = ColorController.CurrentTheme.AddColor;
-            this.SelectedTabColor = ColorController.CurrentTheme.ChoosedColor;
-            this.UnselectedTabColor = ColorController.CurrentTheme.BackColor;
+            this.BarBackgroundColor = ColorController.CurrentTheme.BackColor;
+            this.SelectedTabColor = ColorController.CurrentTheme.AddColor;
+            this.UnselectedTabColor = ColorController.CurrentTheme.FontColor;
         }
 
         protected override void OnAppearing()
