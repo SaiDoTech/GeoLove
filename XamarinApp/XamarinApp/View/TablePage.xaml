@@ -14,10 +14,6 @@
                     HorizontalOptions="FillAndExpand">
                 </Picker>
 
-                <StackLayout x:Name="frameStack"
-                             Padding="10,10,10,10">
-                </StackLayout>
-
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

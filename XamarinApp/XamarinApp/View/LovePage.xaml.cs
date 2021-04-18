@@ -20,6 +20,7 @@ namespace XamarinApp.View
 
         protected override void OnAppearing()
         {
+            AddUserInfo();
             ReColor();
         }
 
@@ -35,9 +36,13 @@ namespace XamarinApp.View
 
         private void AddUserInfo()
         {
-            var stack = new StackLayout();
-
-            var photoFrame = new Frame();
+            var photoFrame = new Frame()
+            {
+                BorderColor = ColorController.CurrentTheme.AddColor,
+                WidthRequest = 0.45f * userFrame.Width,
+                HeightRequest = 0.55f * userFrame.Height,
+                Padding =  new Thickness(5, 5, 5, 5)
+            };
 
             var userPhoto = new Image();
             userPhoto.Source = new UriImageSource
@@ -48,9 +53,64 @@ namespace XamarinApp.View
             userPhoto.Aspect = Aspect.AspectFill;
             photoFrame.Content = userPhoto;
 
+            Label nameAgeLabel = new Label()
+            {
+                Text = UserController.CurrentUser.Name + ", " + UserController.CurrentUser.Age,
+                TextColor = ColorController.CurrentTheme.FontColor,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            Label distanceLabel = new Label()
+            {
+                Text = "Distance: 200m",
+                TextColor = ColorController.CurrentTheme.FontColor,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            var stack = new StackLayout();
             stack.Children.Add(photoFrame);
+            stack.Children.Add(nameAgeLabel);
+            stack.Children.Add(distanceLabel);
 
             userFrame.Content = stack;
+
+            SwipeItem leftItem = new SwipeItem
+            {
+                Text = "Like",
+                BackgroundColor = ColorController.CurrentTheme.AddColor
+            };
+            leftItem.Invoked += OnInvoked1;
+            SwipeItem rightItem = new SwipeItem
+            {
+                Text = "Skip",
+                BackgroundColor = ColorController.CurrentTheme.FontColor
+            };
+            rightItem.Invoked += OnInvoked2;
+
+            SwipeItems leftItems = new SwipeItems(new List<SwipeItem>() { leftItem });
+            leftItems.Mode = SwipeMode.Execute;
+
+            SwipeItems rightItems = new SwipeItems(new List<SwipeItem>() { rightItem });
+            rightItems.Mode = SwipeMode.Execute;
+
+            swipeView = new SwipeView
+            {
+                LeftItems = leftItems,
+                RightItems = rightItems,
+                Content = userFrame
+            };
+        }
+
+        private void OnInvoked1(object sender, EventArgs e)
+        {
+            DisplayAlert("Alert", "Licked", "OK");
+        }
+
+        private void OnInvoked2(object sender, EventArgs e)
+        {
+            DisplayAlert("Alert", "Skipped", "OK");
         }
     }
 }

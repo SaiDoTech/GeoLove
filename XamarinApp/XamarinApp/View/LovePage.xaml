@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinApp.View.LovePage">
     <ContentPage.Content>
-        <StackLayout>
-            
+        <StackLayout x:Name="loveStack">
+
             <Label x:Name="profileLabel" 
                 Text="Swipe"
                 FontSize="Title"
@@ -12,11 +12,13 @@
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Center" />
 
-            <Frame x:Name="userFrame"
-                   Margin="10,10,10,10" 
-                   Padding="50,50,50,50"
-                   VerticalOptions="FillAndExpand"/>
-
+            <SwipeView x:Name="swipeView">
+                <Frame x:Name="userFrame"
+                    Margin = "10,10,10,10"
+                    Padding = "50,50,50,50"
+                    VerticalOptions = "FillAndExpand"/>
+            </SwipeView>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -13,6 +13,11 @@ namespace XamarinApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TablePage : ContentPage
     {
+        private StackLayout frameStack = new StackLayout()
+        {
+            Padding = new Thickness(10,10,10,10)
+        };
+
         public TablePage()
         {
             InitializeComponent();
@@ -33,7 +38,6 @@ namespace XamarinApp.View
         {
             ReColor();
 
-            frameStack.Children.Clear();
             ShowLikedUsers();
         }   
 
@@ -42,10 +46,13 @@ namespace XamarinApp.View
             this.BackgroundColor = ColorController.CurrentTheme.BackColor;
             upStack.BackgroundColor = ColorController.CurrentTheme.AddColor;
             sortPicker.TextColor = ColorController.CurrentTheme.BackColor;
+            frameStack.BackgroundColor = ColorController.CurrentTheme.BackColor;
         }
 
         private void ShowLikedUsers()
         {
+            frameStack.Children.Clear();
+
             for (int i = 0; i < 10; i++)
             {
                 var frame = new Frame();
@@ -148,6 +155,7 @@ namespace XamarinApp.View
 
                 frameStack.Children.Add(swipeView);
             }
+            upStack.Children.Add(frameStack);
         }
 
         public void OnInvoked(object sender, EventArgs e)
