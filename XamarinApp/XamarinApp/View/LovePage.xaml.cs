@@ -39,6 +39,7 @@ namespace XamarinApp.View
             var photoFrame = new Frame()
             {
                 BorderColor = ColorController.CurrentTheme.AddColor,
+                BackgroundColor = ColorController.CurrentTheme.BackColor,
                 WidthRequest = 0.45f * userFrame.Width,
                 HeightRequest = 0.55f * userFrame.Height,
                 Padding =  new Thickness(5, 5, 5, 5)
@@ -78,14 +79,14 @@ namespace XamarinApp.View
 
             SwipeItem leftItem = new SwipeItem
             {
-                Text = "Like",
-                BackgroundColor = ColorController.CurrentTheme.AddColor
+                Text = "Skip",
+                BackgroundColor = ColorController.CurrentTheme.FontColor
             };
             leftItem.Invoked += OnInvoked1;
             SwipeItem rightItem = new SwipeItem
             {
-                Text = "Skip",
-                BackgroundColor = ColorController.CurrentTheme.FontColor
+                Text = "Like",
+                BackgroundColor = ColorController.CurrentTheme.AddColor
             };
             rightItem.Invoked += OnInvoked2;
 
@@ -95,22 +96,18 @@ namespace XamarinApp.View
             SwipeItems rightItems = new SwipeItems(new List<SwipeItem>() { rightItem });
             rightItems.Mode = SwipeMode.Execute;
 
-            swipeView = new SwipeView
-            {
-                LeftItems = leftItems,
-                RightItems = rightItems,
-                Content = userFrame
-            };
+            swipeView.LeftItems = leftItems;
+            swipeView.RightItems = rightItems;
         }
 
         private void OnInvoked1(object sender, EventArgs e)
         {
-            DisplayAlert("Alert", "Licked", "OK");
+            DisplayAlert("Alert", "Skipped", "OK");
         }
 
         private void OnInvoked2(object sender, EventArgs e)
         {
-            DisplayAlert("Alert", "Skipped", "OK");
+            DisplayAlert("Alert", "Licked", "OK");
         }
     }
 }

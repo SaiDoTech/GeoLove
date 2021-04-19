@@ -4,9 +4,18 @@
              x:Class="XamarinApp.View.UserProfilePage">
     <ContentPage.Content>
         <StackLayout>
-            
 
-            
+            <Label x:Name="userProfileLabel" 
+                Text="Your Profile"
+                FontSize="Title"
+                Padding="0, 10, 0, 10"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center" />
+
+            <Frame x:Name="userFrame"
+                    Margin = "10,10,10,10"
+                    VerticalOptions="FillAndExpand"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

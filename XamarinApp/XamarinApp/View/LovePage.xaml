@@ -12,11 +12,11 @@
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Center" />
 
-            <SwipeView x:Name="swipeView">
+            <SwipeView x:Name="swipeView"
+                       VerticalOptions="FillAndExpand">
                 <Frame x:Name="userFrame"
                     Margin = "10,10,10,10"
-                    Padding = "50,50,50,50"
-                    VerticalOptions = "FillAndExpand"/>
+                    Padding = "50,50,50,50"/>
             </SwipeView>
             
         </StackLayout>
