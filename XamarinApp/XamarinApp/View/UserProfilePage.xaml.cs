@@ -37,7 +37,6 @@ namespace XamarinApp.View
         private void AddUserInfo()
         {
             StackLayout frameStack = new StackLayout();
-            ScrollView scrollView = new ScrollView();
 
             var photoFrame = new Frame()
             {
@@ -116,33 +115,10 @@ namespace XamarinApp.View
                 Padding = new Thickness(10, 10, 10, 10)
             };
 
-            StackLayout mediaStack = new StackLayout();
-
-            Label mediaLabel = new Label()
-            {
-                TextColor = ColorController.CurrentTheme.FontColor,
-                Text = "Profile's Media",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-                HorizontalTextAlignment = TextAlignment.Center
-            };
-            mediaStack.Children.Add(mediaLabel);
-
-            Label showLabel = new Label()
-            {
-                TextColor = ColorController.CurrentTheme.FontColor,
-                Text = "Show all media",
-                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label))
-            };
-            mediaStack.Children.Add(showLabel);
-
-            mediaFrame.Content = mediaStack;
-
             frameStack.Children.Add(photoFrame);
             frameStack.Children.Add(infoFrame);
-            frameStack.Children.Add(mediaFrame);
 
-            scrollView.Content = frameStack;
-            userFrame.Content = scrollView;
+            userFrame.Content = frameStack;
         }
     }
 }
